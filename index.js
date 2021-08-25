@@ -29,7 +29,13 @@ const exampleNetworks = require("./bike-networks");
       // ...
     ];
  */
-function getAllBikeNetworkNames() {}
+function getAllBikeNetworkNames(networks) {
+  let bikeBrands = [];
+  for (let network of networks) {
+    bikeBrands.push(network.name);
+  }
+  return bikeBrands;
+}
 
 /**
  * getAllBikeNetworksInTheUS()
@@ -57,7 +63,18 @@ function getAllBikeNetworkNames() {}
       // ...
     ]
  */
-function getAllBikeNetworksInTheUS() {}
+function getAllBikeNetworksInTheUS(networks) {
+  if (networks.length === 0) {
+    return [];
+  }
+  let usBikeBrands = [];
+  for (let network of networks) {
+    if (network.location.country === "US") {
+      usBikeBrands.push(network);
+    }
+  }
+  return usBikeBrands;
+}
 
 /**
  * getBikeNetworkWithLowestLongitude()
