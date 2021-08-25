@@ -103,7 +103,17 @@ function getAllBikeNetworksInTheUS(networks) {
       name: "BIKETOWN",
     }
  */
-function getBikeNetworkWithLowestLongitude() {}
+function getBikeNetworkWithLowestLongitude(networks) {
+  let lowestLongitude = [];
+  let lowestLongitudeBrands = [];
+  for (let i = 0; i < networks.length; i++) {
+    if (Number(networks[i].location.longitude) < lowestLongitude) {
+      lowestLongitude = Number(networks[i].location.longitude);
+    }
+    lowestLongitude == lowestLongitudeBrands(networks.company);
+  }
+  return lowestLongitudeBrands;
+}
 
 /**
  * countByCountry()
@@ -151,7 +161,7 @@ function countByCountry() {}
       name: "Indego",
     }
  */
-function findById() {}
+function findById(networks) {}
 
 /**
  * filterByCountry()
